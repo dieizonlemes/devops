@@ -64,4 +64,5 @@ cd infra && terraform destroy        # apaga o cluster ao terminar o dia
 | `O Docker não está respondendo` | Abra o Docker Desktop e espere ele ficar pronto |
 | Comando não encontrado logo após instalar | Feche e abra o terminal (o Windows atualiza o PATH só em terminais novos) |
 | Job do GitHub Actions parado em "Waiting for a runner" | O runner no seu computador não está rodando: abra-o de novo (Módulo 3) |
+| Job parado em "Queued" mesmo com o runner aparecendo como online | O runner travou depois de uma queda de conexão: na janela dele, `Ctrl+C` e rode `run.cmd` (ou `./run.sh`) de novo |
 | `kubectl` falando com outro cluster | `kubectl config use-context kind-devops-lab` |
