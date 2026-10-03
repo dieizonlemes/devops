@@ -1,0 +1,5 @@
+# Quebras de linha LF em todos os arquivos de texto, inclusive no Windows.
+# Sem isso, scripts .sh param de funcionar ("bash\r: No such file or directory").
+* text=auto eol=lf
+*.png binary
+*.jpg binary

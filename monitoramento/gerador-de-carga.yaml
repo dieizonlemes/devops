@@ -1,0 +1,25 @@
+# Gera tráfego contínuo na minha-app de hml (1 requisição a cada 0,2s),
+# para que as métricas e o alerta tenham o que mostrar.
+#   kubectl apply -n hml -f monitoramento/gerador-de-carga.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gerador-de-carga
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gerador-de-carga
+  template:
+    metadata:
+      labels:
+        app: gerador-de-carga
+    spec:
+      containers:
+        - name: carga
+          image: busybox:1.37
+          command: ["sh", "-c", "while true; do wget -qO- http://minha-app > /dev/null 2>&1; sleep 0.2; done"]
+          resources:
+            requests:
+              cpu: 10m
+              memory: 16Mi

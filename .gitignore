@@ -1,0 +1,15 @@
+# Terraform: o state guarda as credenciais do cluster — nunca vai para o Git
+infra/.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+# kubeconfig gravado pelo provider do kind (contém a chave do cluster)
+infra/*-config
+
+# Node.js
+node_modules/
+npm-debug.log*
+
+# Sistema
+.DS_Store
+Thumbs.db

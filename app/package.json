@@ -1,0 +1,14 @@
+{
+  "name": "minha-app",
+  "version": "1.0.0",
+  "description": "Aplicação de exemplo do curso DevOps do Zero ao Deploy",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,42 @@
+# Valores do kube-prometheus-stack para o laboratório local.
+
+# Procura ServiceMonitors e PrometheusRules em todos os namespaces,
+# não só nos criados por este chart — é assim que a minha-app é encontrada.
+prometheus:
+  prometheusSpec:
+    serviceMonitorSelectorNilUsesHelmValues: false
+    ruleSelectorNilUsesHelmValues: false
+    nodeSelector:
+      pool: sistema
+    retention: 2d
+    resources:
+      requests:
+        memory: 400Mi
+
+alertmanager:
+  alertmanagerSpec:
+    nodeSelector:
+      pool: sistema
+
+grafana:
+  adminPassword: devops        # só para o laboratório local!
+  nodeSelector:
+    pool: sistema
+
+prometheusOperator:
+  nodeSelector:
+    pool: sistema
+
+kube-state-metrics:
+  nodeSelector:
+    pool: sistema
+
+# Componentes do control-plane que o kind não expõe para coleta.
+kubeControllerManager:
+  enabled: false
+kubeScheduler:
+  enabled: false
+kubeEtcd:
+  enabled: false
+kubeProxy:
+  enabled: false

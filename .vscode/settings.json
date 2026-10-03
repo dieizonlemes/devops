@@ -1,0 +1,9 @@
+{
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "files.eol": "\n",
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "[terraform]": {
+    "editor.formatOnSave": true
+  }
+}
